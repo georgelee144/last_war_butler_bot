@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "last-war-butler-bot"
+version = "0.1.0"
+description = ""
+authors = ["georgelee144 <george@ml.cafe>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+py-cord = "^2.6.0"
+toml = "^0.10.2"
+pendulum = "^3.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

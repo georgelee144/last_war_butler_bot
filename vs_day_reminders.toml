@@ -1,0 +1,115 @@
+[vs_day_1]
+name = "Radar Training"
+day = "Sunday"
+tasks = [
+    "Use 1 Stamina",
+    "Complete 1 Radar task",
+    "Use at least 660 Hero EXP",
+    "Use 1 Drone Combat Data point",
+    "Use 1 Drone Part",
+    "Gather 100 Food",
+    "Gather 100 Iron",
+    "Gather 60 Gold",
+]
+
+[vs_day_2]
+name = "Base Expansion"
+day = "Monday"
+tasks = [
+    "Use 1-min Construction Speedup",
+    "Increase Building by 1pt",
+    "Dispatch UR Trade Truck 1 time",
+    "Perform 1 Legendary Secret Task",
+    "Recruit Survivor 1 time",
+]
+
+[vs_day_3]
+name = "Age of Science"
+day = "Tuesday"
+tasks = [
+    "Use 1-min Research Speedup",
+    "Increase Tech Power by 1pt",
+    "Use 1 Valor Badge",
+    "Complete 1 Radar task",
+    "For each Lv. 1 Drone Component Chest opened",
+    "For each Lv. 2 Drone Component Chest opened",
+    "For each Lv. 3 Drone Component Chest opened",
+    "For each Lv. 4 Drone Component Chest opened",
+    "For each Lv. 5 Drone Component Chest opened",
+    "For each Lv. 6 Drone Component Chest opened",
+    "For each Lv. 7 Drone Component Chest opened",
+]
+
+[vs_day_4]
+name = "Train Heroes"
+day = "Wednesday"
+tasks = [
+    "Elite Recruit 1 time",
+    "Use at least 660 Hero EXP",
+    "Use 1 Legendary Hero Shard",
+    "Use 1 Epic Hero Shard",
+    "Use 1 Rare Hero Shard",
+    "Use 1 Skill Medal",
+]
+
+[vs_day_5]
+name = "Total Mobilization"
+day = "Thursday"
+tasks = [
+    "Complete 1 Radar task",
+    "Use 1-min Construction Speedup",
+    "Increase Building by 1pt",
+    "Use 1-min Research Speedup",
+    "Increase Tech Power by 1pt",
+    "Use 1-min Training Speedup",
+    "Train a Lv. 1 unit",
+    "Train a Lv. 2 unit",
+    "Train a Lv. 3 unit",
+    "Train a Lv. 4 unit",
+    "Train a Lv. 5 unit",
+    "Train a Lv. 6 unit",
+    "Train a Lv. 7 unit",
+    "Train a Lv. 8 unit",
+    "Train a Lv. 9 unit",
+    "Train a Lv. 10 unit",
+]
+
+[vs_day_6]
+name = "Enemy Buster"
+day = "Friday"
+tasks = [
+    "Use 1-min Construction Speedup",
+    "Use 1-min Research Speedup",
+    "Use 1-min Training Speedup",
+    "Use 1-min Healing Speedup",
+    "Every Lv. 1 Unit Killed from rival Alliance",
+    "Every Lv. 2 Unit Killed from rival Alliance",
+    "Every Lv. 3 Unit Killed from rival Alliance",
+    "Every Lv. 4 Unit Killed from rival Alliance",
+    "Every Lv. 5 Unit Killed from rival Alliance",
+    "Every Lv. 6 Unit Killed from rival Alliance",
+    "Every Lv. 7 Unit Killed from rival Alliance",
+    "Every Lv. 8 Unit Killed from rival Alliance",
+    "Every Lv. 9 Unit Killed from rival Alliance",
+    "Every Lv. 10 Unit Killed from rival Alliance",
+    "Every Lv. 1 Unit Killed",
+    "Every Lv. 2 Unit Killed",
+    "Every Lv. 3 Unit Killed",
+    "Every Lv. 4 Unit Killed",
+    "Every Lv. 5 Unit Killed",
+    "Every Lv. 6 Unit Killed",
+    "Every Lv. 7 Unit Killed",
+    "Every Lv. 8 Unit Killed",
+    "Every Lv. 9 Unit Killed",
+    "Every Lv. 10 Unit Killed",
+    "Every Lv. 1 Unit Lost",
+    "Every Lv. 2 Unit Lost",
+    "Every Lv. 3 Unit Lost",
+    "Every Lv. 4 Unit Lost",
+    "Every Lv. 5 Unit Lost",
+    "Every Lv. 6 Unit Lost",
+    "Every Lv. 7 Unit Lost",
+    "Every Lv. 8 Unit Lost",
+    "Every Lv. 9 Unit Lost",
+    "Every Lv. 10 Unit Lost",
+]
