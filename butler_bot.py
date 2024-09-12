@@ -4,13 +4,6 @@ from discord.ext import commands
 import pendulum
 import helper
 
-# ToDo
-# add reminder of saves for the remaining days of VS
-# add desert storm and marshalls
-# add slash command to make custom reminders
-# find fix for join
-# add logging
-
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
@@ -19,20 +12,23 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 server_info = helper.read_server_info()
 token = helper.read_token()
 
+
 async def send_message_to_channel(channel, message):
     channel_id = server_info[channel]
     channel = client.get_channel(channel_id)
 
     await channel.send(message)
 
+
 @client.event
 async def on_member_join(member):
     print(f"New member joined: {member.name}")
-    general_channel = client.get_channel(server_info['welcome_channel']) 
+    general_channel = client.get_channel(server_info["welcome_channel"])
     if general_channel:
         await general_channel.send(f"Welcome to the server, {member.mention}! 👋")
     else:
         print("Error: Could not find the general channel.")
+
 
 # @client.event
 # async def on_member_join(member):
@@ -50,7 +46,7 @@ async def vs_day_reminder():
     while True:
         current_time = pendulum.now()
         if current_time.hour == 22 and current_time.minute == 0:
-        # if True:
+            # if True:
 
             for vs_day_key, vs_day_info in vs_day_reminders.items():
                 day_of_week_match_check = (
@@ -58,7 +54,9 @@ async def vs_day_reminder():
                 )
 
                 if day_of_week_match_check:
-                    message = f"# It is now day {vs_day_key[-1]} aka {vs_day_info['name']}.\n"
+                    message = (
+                        f"# It is now day {vs_day_key[-1]} aka {vs_day_info['name']}.\n"
+                    )
                     message += "Perform the following tasks to earn points:\n"
                     message += f"""{helper.combine_vs_tasks(vs_day_info["tasks"])}"""
                     break

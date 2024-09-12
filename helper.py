@@ -14,20 +14,24 @@ days_of_week = [
 def read_toml(file):
     return toml.load(file)
 
+
 def read_vs_day_toml(file="vs_day_reminders.toml"):
     return read_toml(file)
 
+
 def read_server_info(file="server_info.toml"):
     return read_toml(file)
+
 
 def read_token(file=".secret"):
     with open(file=file) as f:
         token = f.read()
         return token
 
+
 def combine_vs_tasks(tasks):
     message = ""
-    for index,task in enumerate(tasks):
+    for index, task in enumerate(tasks):
         message += f"{index+1}. {task}\n"
 
     return message
