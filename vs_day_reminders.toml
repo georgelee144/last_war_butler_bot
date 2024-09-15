@@ -7,9 +7,19 @@ tasks = [
     "Use at least 660 Hero EXP",
     "Use 1 Drone Combat Data point",
     "Use 1 Drone Part",
-    "Gather 100 Food",
-    "Gather 100 Iron",
-    "Gather 60 Gold",
+    "Gather 100 Food (Radar mining tasks do not count)",
+    "Gather 100 Iron (Radar mining tasks do not count)",
+    "Gather 60 Gold (Radar mining tasks do not count)",
+]
+tips = [
+    "Do NOT open drone boxes, you open those in 2 days during the Age of Science (Day 3).",
+    "It is recommended that Hero Exp be used on Day 4, Hero day.",
+    "Send your squads to mine throughout the day and pull back before reset.",
+]
+reminders = [
+    "Base Expansion is tommorrow, so don't pop presents and start a 1 day build",
+    "Hold survivor tickets for tommorrow.",
+    "Hold all hero related upgrades (except for gear) for 3 more days until Day 4, Hero day.",
 ]
 
 [vs_day_2]
@@ -21,6 +31,16 @@ tasks = [
     "Dispatch UR Trade Truck 1 time",
     "Perform 1 Legendary Secret Task",
     "Recruit Survivor 1 time",
+]
+tips = [
+    "Up to 30 survivor tickets may be purchased in Alliance store each week.",
+    "General use speed-ups count as long as it is used towards buildings",
+    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
+]
+reminders = [
+    "Save radar tasks again for Age of Science.",
+    "Age of science follows that.",
+    "Keep holding all hero related upgrades (except for gear) for 2 more days until Day 4, Hero day.",
 ]
 
 [vs_day_3]
@@ -39,6 +59,20 @@ tasks = [
     "For each Lv. 6 Drone Component Chest opened",
     "For each Lv. 7 Drone Component Chest opened",
 ]
+tips = [
+    "Open those drone boxes but wait for Day 1 again to merge parts.",
+    "Level 1 boxes can be found in Alliance Store.",
+    "Level 3 boxes can be found in Invading Zombie Event Store.",
+    "Level 5 boxes are for the generous ones and can be found in Drone Component under Weekly Deals.",
+    "Research only things that use valor points as those count more.",
+    "General use speed-ups count as long as it is used towards research.",
+    "Do NOT pop your buildings/presents until Day 5.",
+    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
+]
+reminders = [
+    "Hold survivor tickets",
+    "Keep holding all hero related upgrades (except for gear) for 1 more day until Day 4, Hero day.",
+]
 
 [vs_day_4]
 name = "Train Heroes"
@@ -51,6 +85,16 @@ tasks = [
     "Use 1 Rare Hero Shard",
     "Use 1 Skill Medal",
 ]
+tips = [
+    "Research only things that use valor points",
+    "General use speed-ups count as long as it is used towards research",
+    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
+]
+reminders = [
+    "Save radar tasks again for Total Mobilization, next VS day.",
+    "Hold survivor tickets for next week.",
+    "Research and Buildings are for tomorrow.",
+]
 
 [vs_day_5]
 name = "Total Mobilization"
@@ -62,16 +106,17 @@ tasks = [
     "Use 1-min Research Speedup",
     "Increase Tech Power by 1pt",
     "Use 1-min Training Speedup",
-    "Train a Lv. 1 unit",
-    "Train a Lv. 2 unit",
-    "Train a Lv. 3 unit",
-    "Train a Lv. 4 unit",
-    "Train a Lv. 5 unit",
-    "Train a Lv. 6 unit",
-    "Train a Lv. 7 unit",
-    "Train a Lv. 8 unit",
-    "Train a Lv. 9 unit",
-    "Train a Lv. 10 unit",
+    "Train any Lv. 1 to 10 unit",
+]
+tips = [
+    "Research only things that use valor points.",
+    "General use speed-ups count as long as it is used towards research.",
+    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
+]
+reminders = [
+    "Save radar tasks again for Total Mobilization",
+    "Age of science follows that",
+    "Hold survivor tickets",
 ]
 
 [vs_day_6]
@@ -82,34 +127,32 @@ tasks = [
     "Use 1-min Research Speedup",
     "Use 1-min Training Speedup",
     "Use 1-min Healing Speedup",
-    "Every Lv. 1 Unit Killed from rival Alliance",
-    "Every Lv. 2 Unit Killed from rival Alliance",
-    "Every Lv. 3 Unit Killed from rival Alliance",
-    "Every Lv. 4 Unit Killed from rival Alliance",
-    "Every Lv. 5 Unit Killed from rival Alliance",
-    "Every Lv. 6 Unit Killed from rival Alliance",
-    "Every Lv. 7 Unit Killed from rival Alliance",
-    "Every Lv. 8 Unit Killed from rival Alliance",
-    "Every Lv. 9 Unit Killed from rival Alliance",
-    "Every Lv. 10 Unit Killed from rival Alliance",
-    "Every Lv. 1 Unit Killed",
-    "Every Lv. 2 Unit Killed",
-    "Every Lv. 3 Unit Killed",
-    "Every Lv. 4 Unit Killed",
-    "Every Lv. 5 Unit Killed",
-    "Every Lv. 6 Unit Killed",
-    "Every Lv. 7 Unit Killed",
-    "Every Lv. 8 Unit Killed",
-    "Every Lv. 9 Unit Killed",
-    "Every Lv. 10 Unit Killed",
-    "Every Lv. 1 Unit Lost",
-    "Every Lv. 2 Unit Lost",
-    "Every Lv. 3 Unit Lost",
-    "Every Lv. 4 Unit Lost",
-    "Every Lv. 5 Unit Lost",
-    "Every Lv. 6 Unit Lost",
-    "Every Lv. 7 Unit Lost",
-    "Every Lv. 8 Unit Lost",
-    "Every Lv. 9 Unit Lost",
-    "Every Lv. 10 Unit Lost",
+    "Every Lv. 1 to 10 Unit Killed from rival Alliance",
+    "Every Lv. 1 to 10 Unit Killed",
+    "Every Lv. 1 to 10 Unit Lost",
+]
+tips = [
+    "BUBBLE UP, you may buy  do not scout nor attack as you will have to wait 15 minutes before.",
+    "Participate in the server capitol event, if available, that happens Saturday at 10 AM EST, 9 AM CST, 8 AM MT, 7AM PST. There are extra rewards for those that fight in the mud then.",
+    "Fight intelligently, always aim for smaller targets as kills are worth more than losses.",
+    "Use the 'quick-heal' method. Only heal a small batch, less than 100, of troops and hope your alliance members are online smashing the help button. This method will reduce the time to heal.",
+    "Use speed-ups of any kind for anything to obtain points.",
+    "Perform secret tasks in the morning and collect in 3 hours as there is a smaller chance of it being looted.",
+]
+reminders = [
+    "There is a free teleport in the third tab of VS. Use it to teleport to the other server and back to align your self.",
+    "Do NOT put out fires for allied bases that are not bubbled. There is a good chance that they will be set on fire again.",
+]
+
+[vs_day_7]
+name = "Day after tomato"
+day = "Saturday"
+tasks = ["No tasks"]
+reminders = [
+    "The week starts over ...",
+    "Save radar tasks again",
+    "Keep saving all hero related upgrades and tickets except for gear.",
+    "Hold survivor tickets",
+    "Do NOT pop presents.",
+    "Do NOT open Drone Component Chest.",
 ]

@@ -29,7 +29,7 @@ def read_token(file=".secret"):
         return token
 
 
-def combine_vs_tasks(tasks):
+def combine_vs_messages(tasks):
     message = ""
     for index, task in enumerate(tasks):
         message += f"{index+1}. {task}\n"
