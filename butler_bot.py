@@ -68,7 +68,7 @@ async def vs_day_reminder():
 @client.event
 async def on_ready():
     scheduler = AsyncIOScheduler()
-    scheduler.add_job(vs_day_reminder, 'cron', hour=1, minute=49)
+    scheduler.add_job(vs_day_reminder, 'cron', hour=22, minute=0)
     scheduler.start()
 
 client.run(token)
