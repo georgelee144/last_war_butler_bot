@@ -13,13 +13,16 @@ tasks = [
 ]
 tips = [
     "Do NOT open drone boxes, you open those in 2 days during the Age of Science (Day 3).",
-    "It is recommended that Hero Exp be used on Day 4, Hero day.",
+    "It is recommended that Hero Exp be used on Train Heroes, (Day 4).",
     "Send your squads to mine throughout the day and pull back before reset.",
 ]
 reminders = [
-    "Base Expansion is tommorrow, so don't pop presents and start a 1 day build",
+    "Base Expansion is tommorrow, so don't pop presents.",
+    "Consider starting a 1 day build",
     "Hold survivor tickets for tommorrow.",
     "Hold all hero related upgrades (except for gear) for 3 more days until Day 4, Hero day.",
+    "Consider starting a 2 day research.",
+    "Consider training soliders 1 tier below your current max.",
 ]
 
 [vs_day_2]
@@ -35,12 +38,16 @@ tasks = [
 tips = [
     "Up to 30 survivor tickets may be purchased in Alliance store each week.",
     "General use speed-ups count as long as it is used towards buildings",
-    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
+    "Perform secret tasks in your morning and check at least every 2 hours to minimize theft.",
+    "Stagger truck sends, send the trucks in at least 1 minute intervals.",
+
 ]
 reminders = [
-    "Save radar tasks again for Age of Science.",
-    "Age of science follows that.",
+    "Save radar tasks again for Age of Science, this is tomorrow.",
+    "Consider starting a 1 day research.",
     "Keep holding all hero related upgrades (except for gear) for 2 more days until Day 4, Hero day.",
+    "Consider training soliders 1 tier below your current max.",
+
 ]
 
 [vs_day_3]
@@ -51,27 +58,23 @@ tasks = [
     "Increase Tech Power by 1pt",
     "Use 1 Valor Badge",
     "Complete 1 Radar task",
-    "For each Lv. 1 Drone Component Chest opened",
-    "For each Lv. 2 Drone Component Chest opened",
-    "For each Lv. 3 Drone Component Chest opened",
-    "For each Lv. 4 Drone Component Chest opened",
-    "For each Lv. 5 Drone Component Chest opened",
-    "For each Lv. 6 Drone Component Chest opened",
-    "For each Lv. 7 Drone Component Chest opened",
+    "For each Lv. 1 - 10 Drone Component Chest opened",
 ]
 tips = [
     "Open those drone boxes but wait for Day 1 again to merge parts.",
-    "Level 1 boxes can be found in Alliance Store.",
-    "Level 3 boxes can be found in Invading Zombie Event Store.",
+    "Level 1 boxes can be purchased in Alliance Store.",
+    "Level 3 boxes can be purchased in Invading Zombie Event Store, when event is active.",
     "Level 5 boxes are for the generous ones and can be found in Drone Component under Weekly Deals.",
     "Research only things that use valor points as those count more.",
     "General use speed-ups count as long as it is used towards research.",
-    "Do NOT pop your buildings/presents until Day 5.",
-    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
 ]
 reminders = [
-    "Hold survivor tickets",
-    "Keep holding all hero related upgrades (except for gear) for 1 more day until Day 4, Hero day.",
+    "Do NOT merge Drone parts until Day 1 of next VS.",
+    "Hold survivor tickets again for the next week.",
+    "Save buildings/present pops for Total Mobilization, in 2 days.",
+    "Keep holding all hero related upgrades (except for gear) for 1 more day until Train Heroes (Day 4).",
+    "Consider training soliders 1 tier below your current max.",
+
 ]
 
 [vs_day_4]
@@ -85,15 +88,13 @@ tasks = [
     "Use 1 Rare Hero Shard",
     "Use 1 Skill Medal",
 ]
-tips = [
-    "Research only things that use valor points",
-    "General use speed-ups count as long as it is used towards research",
-    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
-]
+tips = ["Do all hero stuff today."]
 reminders = [
     "Save radar tasks again for Total Mobilization, next VS day.",
-    "Hold survivor tickets for next week.",
-    "Research and Buildings are for tomorrow.",
+    "Continue holding survivor tickets for next week.",
+    "Consider doing a 1-day research for tomorrow.",
+    "Consider training soliders 1 tier below your current max.",
+
 ]
 
 [vs_day_5]
@@ -107,16 +108,20 @@ tasks = [
     "Increase Tech Power by 1pt",
     "Use 1-min Training Speedup",
     "Train any Lv. 1 to 10 unit",
+
 ]
 tips = [
-    "Research only things that use valor points.",
+    "Research anything, research requiring valor does not give extra bonus.",
     "General use speed-ups count as long as it is used towards research.",
-    "Perform secret tasks in the morning as there is a smaller chance of it being looted.",
+    "Train troops one tier below your current thourgh out the week and promote them on this day.",
 ]
 reminders = [
-    "Save radar tasks again for Total Mobilization",
-    "Age of science follows that",
-    "Hold survivor tickets",
+    "Buy a shield/bubble for the next reset.",
+    "Kill day is tommorrow.",
+    "Continue holding survivor tickets for next week.",
+    "Save all hero related upgrades and tickets except for gear for next week.",
+    "Consider training soliders 1 tier below your current max.",
+
 ]
 
 [vs_day_6]
@@ -132,12 +137,13 @@ tasks = [
     "Every Lv. 1 to 10 Unit Lost",
 ]
 tips = [
-    "BUBBLE UP, you may buy  do not scout nor attack as you will have to wait 15 minutes before.",
+    "BUBBLE UP, you may buy buy a sheild from Alliance or VIP store. Do not scout nor attack as you will have to wait 15 minutes before being allowed to sheild.",
     "Participate in the server capitol event, if available, that happens Saturday at 10 AM EST, 9 AM CST, 8 AM MT, 7AM PST. There are extra rewards for those that fight in the mud then.",
     "Fight intelligently, always aim for smaller targets as kills are worth more than losses.",
-    "Use the 'quick-heal' method. Only heal a small batch, less than 100, of troops and hope your alliance members are online smashing the help button. This method will reduce the time to heal.",
+    "Use the 'quick-heal' method. Only heal a small batch at a time, less than 100, of troops and hope your alliance members are online smashing the help button. This method will reduce the time to heal.",
     "Use speed-ups of any kind for anything to obtain points.",
-    "Perform secret tasks in the morning and collect in 3 hours as there is a smaller chance of it being looted.",
+    "Perform secret tasks in your morning and check at least every 2 hours to minimize theft.",
+    "Stagger truck sends, send the trucks in at least 1 minute intervals.",
 ]
 reminders = [
     "There is a free teleport in the third tab of VS. Use it to teleport to the other server and back to align your self.",
@@ -150,9 +156,12 @@ day = "Saturday"
 tasks = ["No tasks"]
 reminders = [
     "The week starts over ...",
+    "Save some stamina for Day 1.",
     "Save radar tasks again",
     "Keep saving all hero related upgrades and tickets except for gear.",
-    "Hold survivor tickets",
-    "Do NOT pop presents.",
+    "Keep holding survivor tickets",
+    "Do NOT pop presents/buildings.",
     "Do NOT open Drone Component Chest.",
+    "Do NOT upgrade drone nor drone parts.",
+    "Train troops one tier below your current.",
 ]
