@@ -4,6 +4,7 @@ from discord.ext import commands
 import pendulum
 import helper
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.triggers.cron import CronTrigger
 import logging
 
 intents = discord.Intents.default()
@@ -65,10 +66,20 @@ async def vs_day_reminder():
         logging.error(f"Failed to send {message} because: {error}")
     await asyncio.sleep(61)
 
+async def marshal_reminder():
+    message = "# Alliance Exercise (Marshal) will begin in about 5 minutes.\n"
+    message += "## Stop your rallies and prepare to only join/start Marshal rallies only.\n"
+    message += "1. Only join rallies with a 2.5% or a 5% bonus if your squad power is greater than 5 million in power.\n"
+    message += "2. Generally speaking you should start rallies with your B squad and join rallies with your other squads. If you see a lot of unfilled rallies please join one instead of creating a new one.\n"
+    message += "3. You may stop when we reach level 5. Although we ask that you countine to send rallies so offline members may join.\n"
+
+    await send_message_to_channel("annoncement_channel_id", message)
+
 @client.event
 async def on_ready():
     scheduler = AsyncIOScheduler()
     scheduler.add_job(vs_day_reminder, 'cron', hour=22, minute=0)
+    scheduler.add_job(marshal_reminder, CronTrigger(day_of_week='mon,tue', hour=22, minute=25))
     scheduler.start()
 
 client.run(token)
