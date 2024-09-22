@@ -153,7 +153,8 @@ reminders = [
 [vs_day_7]
 name = "Day after tomato"
 day = "Saturday"
-tasks = ["No tasks"]
+tasks = ["No tasks"]4
+tips = ["Get ready to do it all again!"]
 reminders = [
     "The week starts over ...",
     "Save some stamina for Day 1.",
