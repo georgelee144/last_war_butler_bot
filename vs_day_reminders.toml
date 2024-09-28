@@ -116,6 +116,7 @@ tips = [
     "Train troops one tier below your current thourgh out the week and promote them on this day.",
 ]
 reminders = [
+    "Tomorrow is the internal Capitol fight, buffs will not be available, plan accordingly.",
     "Buy a shield/bubble for the next reset.",
     "Kill day is tommorrow.",
     "Continue holding survivor tickets for next week.",
@@ -146,7 +147,7 @@ tips = [
     "Stagger truck sends, send the trucks in at least 1 minute intervals.",
 ]
 reminders = [
-    "There is a free teleport in the third tab of VS. Use it to teleport to the other server and back to align your self.",
+    "There is a free teleport in the fourth tab (Alliance Assaults) of VS. Use it to teleport to the other server and back to align yourself.",
     "Do NOT put out fires for allied bases that are not bubbled. There is a good chance that they will be set on fire again.",
 ]
 
