@@ -52,10 +52,18 @@ async def on_member_join(member):
 
 
 @bot.slash_command(name="llm", description="Process a message with LLM")
-async def llm(ctx, message: str):
+@commands.option(
+    "temperature",
+    description="How random would you like the bot to be. Accepted values are any real number between 0.0 (determinstic) to 2.0 (very random)",
+    required=False,
+    default=0.0,
+)
+async def llm(ctx, temperature: float, message: str):
     logging.info(f"{ctx.author} called llm with this prompt: {message}")
     try:
-        response = google_gemini_llm.talk_to_gemini(message_to_llm=message)
+        response = google_gemini_llm.talk_to_gemini(
+            message_to_llm=message, temperature=temperature
+        )
     except Exception as error:
         logging.error(f"Failed to get a response from llm because {error}")
 
