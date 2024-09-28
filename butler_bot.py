@@ -17,7 +17,7 @@ logging.basicConfig(
 
 intents = discord.Intents.default()
 intents.message_content = True
-client = discord.Client(intents=intents)
+intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 server_info = helper.read_server_info()
@@ -27,7 +27,7 @@ token = helper.read_token()
 async def send_message_to_channel(channel, message):
     channel_id = server_info[channel]
     logging.info(f"Sending {message} to channel {channel_id}")
-    channel = client.get_channel(channel_id)
+    channel = bot.get_channel(channel_id)
     try:
         await channel.send(message)
     except Exception as error:
@@ -37,7 +37,7 @@ async def send_message_to_channel(channel, message):
         pass
 
 
-@client.event
+@bot.event
 async def on_member_join(member):
     logging.info(f"New member has joined: {member.name}")
 
@@ -52,13 +52,16 @@ async def on_member_join(member):
 
 
 @bot.slash_command(name="llm", description="Process a message with LLM")
-@commands.option(
+@discord.option("message", type=str)
+@discord.option(
     "temperature",
-    description="How random would you like the bot to be. Accepted values are any real number between 0.0 (determinstic) to 2.0 (very random)",
-    required=False,
+    description="Determines randomness of output 0.0 (less random) to 2.0 (more random)",
+    type=discord.SlashCommandOptionType.number,
     default=0.0,
+    min_value=0.0,
+    max_value=2.0,
 )
-async def llm(ctx, temperature: float, message: str):
+async def llm(ctx, message: str, temperature: float):
     logging.info(f"{ctx.author} called llm with this prompt: {message}")
     try:
         response = google_gemini_llm.talk_to_gemini(
@@ -139,7 +142,7 @@ async def capitol_mud_fight_end():
     await send_message_to_channel("annoncement_channel_id", message)
 
 
-@client.event
+@bot.event
 async def on_ready():
     scheduler = AsyncIOScheduler()
     scheduler.add_job(vs_day_reminder, "cron", hour=22, minute=0)
@@ -158,4 +161,4 @@ async def on_ready():
     scheduler.start()
 
 
-client.run(token)
+bot.run(token)
