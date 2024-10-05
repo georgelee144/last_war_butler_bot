@@ -158,7 +158,7 @@ async def on_ready():
         capitol_mud_fight_active, CronTrigger(day_of_week="fri", hour=10, minute=0)
     )
     scheduler.add_job(
-        capitol_mud_fight_end, CronTrigger(day_of_week="fri", hour=5, minute=55)
+        capitol_mud_fight_end, CronTrigger(day_of_week="fri", hour=17, minute=55)
     )
     scheduler.start()
 
