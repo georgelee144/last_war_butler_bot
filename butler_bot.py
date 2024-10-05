@@ -7,6 +7,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 import logging
 import google_gemini_llm
+import os
 
 logging.basicConfig(
     filename="butler_bot.log",
@@ -21,8 +22,7 @@ intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 server_info = helper.read_server_info()
-token = helper.read_token()
-
+token = os.getenv("LAST_WAR_DISCORD_TOKEN")
 
 async def send_message_to_channel(channel, message):
     channel_id = server_info[channel]
@@ -63,14 +63,16 @@ async def on_member_join(member):
 )
 async def llm(ctx:discord.commands.context.ApplicationContext, message: str, temperature: float):
     logging.info(f"{ctx.author} called llm with this prompt: {message}")
-    try:
-        response = google_gemini_llm.talk_to_gemini(
+    
+    response = google_gemini_llm.talk_to_gemini(
             message_to_llm=message, temperature=temperature
-        )
-    except Exception as error:
-        logging.error(f"Failed to get a response from llm because {error}")
+    )
 
-    await ctx.respond(response)
+    if response is tuple:
+        logging.error(f"Failed to get a response from llm because {response[1]}")    
+        await ctx.respond(f"Failed to get a response because {response[1]}")
+    else:
+        await ctx.respond(response)
 
 
 async def vs_day_reminder():
@@ -163,7 +165,7 @@ async def on_ready():
     scheduler = AsyncIOScheduler()
     scheduler.add_job(vs_day_reminder, "cron", hour=22, minute=0)
     scheduler.add_job(
-        marshal_reminder, CronTrigger(day_of_week="sun,tue,thu", hour=22, minute=10)
+        marshal_reminder, CronTrigger(day_of_week="tue,thu,sat", hour=22, minute=10)
     )
     scheduler.add_job(
         capitol_mud_fight_reminder, CronTrigger(day_of_week="fri", hour=9, minute=0)

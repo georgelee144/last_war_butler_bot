@@ -28,6 +28,11 @@ alliance_name = "SOME_NAME"
 last_war_server = SOME_INT
 ```
 
+you will also need to download googleCLI, get an api key and it set `GEMINI_API_KEY` environment variable.
+https://cloud.google.com/sdk/docs/install
+after installing you will need to set up a project and get an api key to set environment variable.
+
+
 .secret is just a string containing the discord bot token that allows the bot to run.
 https://discordgsm.com/guide/how-to-get-a-discord-bot-token
 
