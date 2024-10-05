@@ -6,6 +6,7 @@ Include/
 Scripts/
 share/
 bin/
+.ruff_cache/
 
 server_info.toml
 
