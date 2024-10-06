@@ -61,7 +61,7 @@ async def on_member_join(member):
     min_value=0.0,
     max_value=2.0,
 )
-async def llm(ctx, message: str, temperature: float):
+async def llm(ctx:discord.commands.context.ApplicationContext, message: str, temperature: float):
     logging.info(f"{ctx.author} called llm with this prompt: {message}")
     
     response = google_gemini_llm.talk_to_gemini(
@@ -115,6 +115,17 @@ async def marshal_reminder():
 
     await send_message_to_channel("annoncement_channel_id", message)
 
+@bot.slash_command(name="send_marshal_call", description="Sends stock message that marshal will begin to Announcement Channel")
+async def send_marshal_call(ctx:discord.commands.context.ApplicationContext):
+    caller = ctx.author
+    logging.info(f"{caller} called send_marshal_call()")
+
+    if any(role.name.lower() == "r4" or role.name.lower() == "r5" for role in caller.roles):
+        await marshal_reminder()
+    else:
+        await ctx.respond("Sorry you do not have the authority (R4/R5 roles are missing) to do that.")
+        logging.warning(f"{caller} failed to call send_marshal_call()")
+
 
 async def capitol_mud_fight_reminder():
     message = "# Capitol will open be open in about 1 hour.\n"
@@ -143,6 +154,11 @@ async def capitol_mud_fight_end():
 
     await send_message_to_channel("annoncement_channel_id", message)
 
+async def buy_and_activate_shield_warning():
+    message = "# buy a shield from the Alliance or VIP store and activate it, KILL DAY STARTS IN 20 MINUTES!\n"
+    message += "## Warp up any fights and do not fight nor scout it will trigger war fever for 15 minutes."
+
+    await send_message_to_channel("annoncement_channel_id", message)
 
 @bot.event
 async def on_ready():
@@ -159,6 +175,9 @@ async def on_ready():
     )
     scheduler.add_job(
         capitol_mud_fight_end, CronTrigger(day_of_week="fri", hour=17, minute=55)
+    )
+    scheduler.add_job(
+        buy_and_activate_shield_warning, CronTrigger(day_of_week="fri", hour=21, minute=40)
     )
     scheduler.start()
 
