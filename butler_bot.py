@@ -48,7 +48,7 @@ async def on_member_join(member):
 
     logging.info(f"sending the welcome message: {message} ")
 
-    await send_message_to_channel("welcome_channel", message)
+    await send_message_to_channel("welcome_channel_id", message)
 
 
 @bot.slash_command(name="llm", description="Process a message with LLM")
@@ -165,7 +165,7 @@ async def on_ready():
     scheduler = AsyncIOScheduler()
     scheduler.add_job(vs_day_reminder, "cron", hour=22, minute=0)
     scheduler.add_job(
-        marshal_reminder, CronTrigger(day_of_week="tue,thu,sat", hour=22, minute=10)
+        marshal_reminder, CronTrigger(day_of_week="tue,thu", hour=22, minute=10)
     )
     scheduler.add_job(
         capitol_mud_fight_reminder, CronTrigger(day_of_week="fri", hour=9, minute=0)
