@@ -24,12 +24,13 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 server_info = helper.read_server_info()
 token = os.getenv("LAST_WAR_DISCORD_TOKEN")
 
+@commands.has_permissions(mention_everyone=True)
 async def send_message_to_channel(channel, message):
     channel_id = server_info[channel]
     logging.info(f"Sending {message} to channel {channel_id}")
     channel = bot.get_channel(channel_id)
     try:
-        await channel.send(message)
+        await channel.send(message,allowed_mentions=discord.AllowedMentions(everyone=True))
     except Exception as error:
         logging.error(
             f"Failed to send {message} to channel {channel_id} becauase: {error}"
@@ -160,24 +161,31 @@ async def buy_and_activate_shield_warning():
 
     await send_message_to_channel("annoncement_channel_id", message)
 
+async def desert_storm_reminder():
+    message = "@everyone prepare for Desert Storm it will start soon"
+    await send_message_to_channel("annoncement_channel_id",message)
+
 @bot.event
 async def on_ready():
     scheduler = AsyncIOScheduler()
-    scheduler.add_job(vs_day_reminder, "cron", hour=22, minute=0)
+    scheduler.add_job(vs_day_reminder, "cron", hour=21, minute=0)
+    # scheduler.add_job(
+    #     marshal_reminder, CronTrigger(day_of_week="tue,thu", hour=22, minute=10)
+    # )
     scheduler.add_job(
-        marshal_reminder, CronTrigger(day_of_week="tue,thu", hour=22, minute=10)
+        desert_storm_reminder, CronTrigger(day_of_week="fri", hour=19, minute=55)
     )
     scheduler.add_job(
-        capitol_mud_fight_reminder, CronTrigger(day_of_week="fri", hour=9, minute=0)
+        capitol_mud_fight_reminder, CronTrigger(day_of_week="fri", hour=8, minute=0)
     )
     scheduler.add_job(
-        capitol_mud_fight_active, CronTrigger(day_of_week="fri", hour=10, minute=0)
+        capitol_mud_fight_active, CronTrigger(day_of_week="fri", hour=9, minute=0)
     )
     scheduler.add_job(
-        capitol_mud_fight_end, CronTrigger(day_of_week="fri", hour=17, minute=55)
+        capitol_mud_fight_end, CronTrigger(day_of_week="fri", hour=16, minute=55)
     )
     scheduler.add_job(
-        buy_and_activate_shield_warning, CronTrigger(day_of_week="fri", hour=21, minute=40)
+        buy_and_activate_shield_warning, CronTrigger(day_of_week="fri", hour=20, minute=40)
     )
     scheduler.start()
 

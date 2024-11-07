@@ -7,6 +7,7 @@ tasks = [
     "Use at least 660 Hero EXP",
     "Use 1 Drone Combat Data point",
     "Use 1 Drone Part",
+    "Use Drone Skill Chip",
     "Gather 100 Food (Radar mining tasks do not count)",
     "Gather 100 Iron (Radar mining tasks do not count)",
     "Gather 60 Gold (Radar mining tasks do not count)",
@@ -22,7 +23,7 @@ reminders = [
     "Hold survivor tickets for tommorrow.",
     "Hold all hero related upgrades (except for gear) for 3 more days until Day 4, Hero day.",
     "Consider starting a 2 day research.",
-    "Consider training soliders 1 tier below your current max.",
+    "Consider training soliders at least 1 tier below your current max.",
 ]
 
 [vs_day_2]
