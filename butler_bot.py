@@ -134,11 +134,11 @@ async def translate(ctx:discord.commands.context.ApplicationContext):
 
     last_message = await ctx.channel.history(limit=1).flatten()
     if last_message:
-        last_message = "Translate into english: "+last_message[0]
+        last_message = "Translate into english: "+last_message[0].content
     else:
         await ctx.respond("Sorry but there doesn't seem like there is anything to translate.")
     
-    await llm(ctx=ctx,message =last_message )
+    await llm(ctx=ctx,message =last_message,temperature=1)
 
 @bot.slash_command(name="traducir", description="Traduce el mensaje más reciente al español.")
 async def traducir(ctx:discord.commands.context.ApplicationContext):
@@ -147,11 +147,11 @@ async def traducir(ctx:discord.commands.context.ApplicationContext):
 
     last_message = await ctx.channel.history(limit=1).flatten()
     if last_message:
-        last_message = "Translate into spanish: "+last_message[0]
+        last_message = "Translate into spanish: "+last_message[0].content
     else:
         await ctx.respond("Lo siento, pero no parece que haya nada que traducir.")
     
-    await llm(ctx=ctx,message =last_message )
+    await llm(ctx=ctx,message =last_message,temperature=1)
 
 async def capitol_mud_fight_reminder():
     message = "# Capitol will open be open in about 1 hour.\n"
@@ -181,36 +181,43 @@ async def capitol_mud_fight_end():
     await send_message_to_channel("annoncement_channel_id", message)
 
 async def buy_and_activate_shield_warning():
-    message = "# buy a shield from the Alliance or VIP store and activate it, KILL DAY STARTS IN 20 MINUTES!\n"
+    message = "@everyone \n"
+    message += "# buy a shield from the Alliance or VIP store and activate it, KILL DAY STARTS IN 20 MINUTES!\n"
     message += "## Warp up any fights and do not fight nor scout it will trigger war fever for 15 minutes."
 
     await send_message_to_channel("annoncement_channel_id", message)
 
 async def desert_storm_reminder():
-    message = "@everyone prepare for Desert Storm it will start soon"
+    message = "@everyone For those that registered please prepare for Desert Storm it will start soon,"
+    await send_message_to_channel("annoncement_channel_id",message)
+
+async def desert_storm_registration_reminder():
+    message = "Sign up for Desert Storm by reset, today is the last day to register.\nPlease only sign up if you intend to particpate. DS is on Fridays 8pm EST/5pm PST"
+    await send_message_to_channel("annoncement_channel_id",message)
+
+async def store_reminder():
+    message = "Store will be restock by reset time. Buy your items before then."
     await send_message_to_channel("annoncement_channel_id",message)
 
 @bot.event
 async def on_ready():
     scheduler = AsyncIOScheduler()
     scheduler.add_job(vs_day_reminder, "cron", hour=21, minute=0)
-    # scheduler.add_job(
-    #     marshal_reminder, CronTrigger(day_of_week="tue,thu", hour=22, minute=10)
-    # )
+
+
+
+
+    scheduler.add_job(
+        desert_storm_registration_reminder, CronTrigger(day_of_week="wed", hour=18, minute=0)
+    )
     scheduler.add_job(
         desert_storm_reminder, CronTrigger(day_of_week="fri", hour=19, minute=55)
     )
     scheduler.add_job(
-        capitol_mud_fight_reminder, CronTrigger(day_of_week="fri", hour=8, minute=0)
-    )
-    scheduler.add_job(
-        capitol_mud_fight_active, CronTrigger(day_of_week="fri", hour=9, minute=0)
-    )
-    scheduler.add_job(
-        capitol_mud_fight_end, CronTrigger(day_of_week="fri", hour=16, minute=55)
-    )
-    scheduler.add_job(
         buy_and_activate_shield_warning, CronTrigger(day_of_week="fri", hour=20, minute=40)
+    )
+    scheduler.add_job(
+        store_reminder, CronTrigger(day_of_week="fri", hour=20, minute=40)
     )
     scheduler.start()
 
