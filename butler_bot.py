@@ -6,8 +6,8 @@ import helper
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 import logging
-import google_gemini_llm
 import os
+from googletrans import Translator
 
 logging.basicConfig(
     filename="butler_bot.log",
@@ -23,6 +23,7 @@ intents.members = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 server_info = helper.read_server_info()
 token = os.getenv("LAST_WAR_DISCORD_TOKEN")
+
 
 @commands.has_permissions(mention_everyone=True)
 async def send_message_to_channel(channel, message):
@@ -52,28 +53,22 @@ async def on_member_join(member):
     await send_message_to_channel("welcome_channel_id", message)
 
 
-@bot.slash_command(name="llm", description="Process a message with LLM")
-@discord.option("message", type=str)
-@discord.option(
-    "temperature",
-    description="Determines randomness of output 0.0 (less random) to 2.0 (more random)",
-    type=discord.SlashCommandOptionType.number,
-    default=0.0,
-    min_value=0.0,
-    max_value=2.0,
-)
-async def llm(ctx:discord.commands.context.ApplicationContext, message: str, temperature: float):
-    logging.info(f"{ctx.author} called llm with this prompt: {message}")
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
     
-    response = google_gemini_llm.talk_to_gemini(
-            message_to_llm=message, temperature=temperature
-    )
+    translator = Translator()
 
-    if response is tuple:
-        logging.error(f"Failed to get a response from llm because {response[1]}")    
-        await ctx.respond(f"Failed to get a response because {response[1]}")
-    else:
-        await ctx.respond(response)
+    # Check for emojis in the message
+    for emoji, lang in helper.emoji_to_language.items():
+        if emoji in message.content:
+            text_to_translate = message.content.replace(emoji, '').strip()
+            if text_to_translate:
+                translated_text = translator.translate(text_to_translate, dest=lang).text
+                await message.channel.send(translated_text)
+
+    await bot.process_commands(message)
 
 
 async def vs_day_reminder():
@@ -118,24 +113,11 @@ async def send_marshal_call(ctx:discord.commands.context.ApplicationContext):
     caller = ctx.author
     logging.info(f"{caller} called send_marshal_call()")
 
-    if any(role.name.lower() == "r4" or role.name.lower() == "r5" for role in caller.roles):
+    if any("r4" in role.name.lower() or role.name.lower() == "r5" for role in caller.roles):
         await marshal_reminder()
     else:
         await ctx.respond("Sorry you do not have the authority (R4/R5 roles are missing) to do that.")
         logging.warning(f"{caller} failed to call send_marshal_call()")
-
-@bot.slash_command(name="translate", description="Translates most recent message into English")
-async def translate(ctx:discord.commands.context.ApplicationContext):
-    caller = ctx.author
-    logging.info(f"{caller} called translate()")
-
-    last_message = await ctx.channel.history(limit=1).flatten()
-    if last_message:
-        last_message = "Translate into english: "+last_message[0].content
-    else:
-        await ctx.respond("Sorry but there doesn't seem like there is anything to translate.")
-    
-    await llm(ctx=ctx,message =last_message,temperature=1)
 
 @bot.slash_command(name="traducir", description="Traduce el mensaje más reciente al español.")
 async def traducir(ctx:discord.commands.context.ApplicationContext):

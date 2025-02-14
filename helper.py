@@ -35,3 +35,12 @@ def combine_vs_messages(tasks):
         message += f"{index+1}. {task}\n"
 
     return message
+
+emoji_to_language = {
+    '🇺🇸': 'en',  # English
+    '🇪🇸': 'es',  # Spanish
+    '🇫🇷': 'fr',  # French
+    '🇲🇽': 'es',  # Spanish (for Mexico)
+    '🇰🇷': 'ko',  # Korean
+    '🇧🇷': 'pt',  # Portuguese (Brazil)
+}
