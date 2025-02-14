@@ -19,6 +19,7 @@ logging.basicConfig(
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
+intents.reactions = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 server_info = helper.read_server_info()
@@ -54,7 +55,10 @@ async def on_member_join(member):
 
 
 @bot.event
-async def on_reaction_add(reaction):
+async def on_reaction_add(reaction,user):
+    if user == bot.user:
+        return
+    logging.info(f"{reaction.emoji} was added to this message:{reaction.message}")
 
     emoji = reaction.emoji
 
@@ -63,7 +67,7 @@ async def on_reaction_add(reaction):
 
         text_to_translate = reaction.message.content
         translated_text = translator.translate(text_to_translate, dest=helper.emoji_to_language[emoji]).text
-        
+        logging.info(f"translated {text_to_translate} to {helper.emoji_to_language[emoji]}: {translated_text}")
         await reaction.message.channel.send(translated_text)
     else:
         return
