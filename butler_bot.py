@@ -91,11 +91,8 @@ async def vs_day_reminder():
             message = f"# It is now day {vs_day_key[-1]} aka {vs_day_info['name']}.\n"
             message += "## Perform the following tasks to earn points:\n"
             message += f"""{helper.combine_vs_messages(vs_day_info["tasks"])}"""
-            message += "## Some tips for this day:\n"
-            message += f"""{helper.combine_vs_messages(vs_day_info["tips"])}"""
-            message += "## Some reminders for upcoming days:\n"
-            message += f"""{helper.combine_vs_messages(vs_day_info["reminders"])}"""
-            message += "### For questions and a complete guide please visit [vs-tournament-tips-info](https://discord.com/channels/1263660916994478120/1264795050941091941)"
+            message += "## Arms Race synergy:\n"
+            message += f"""{helper.combine_vs_messages(vs_day_info["arms_race"])}"""
             break
     try:
         logging.info(f"sending {message}")
@@ -205,8 +202,6 @@ async def on_ready():
     scheduler.add_job(vs_day_reminder, "cron", hour=21, minute=0)
 
 
-
-
     scheduler.add_job(
         desert_storm_registration_reminder, CronTrigger(day_of_week="wed", hour=18, minute=0)
     )
@@ -217,7 +212,7 @@ async def on_ready():
         buy_and_activate_shield_warning, CronTrigger(day_of_week="fri", hour=20, minute=40)
     )
     scheduler.add_job(
-        store_reminder, CronTrigger(day_of_week="fri", hour=20, minute=40)
+        store_reminder, CronTrigger(day_of_week="sun", hour=20, minute=40)
     )
     scheduler.start()
 

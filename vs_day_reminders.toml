@@ -12,19 +12,8 @@ tasks = [
     "Gather 100 Iron (Radar mining tasks do not count)",
     "Gather 60 Gold (Radar mining tasks do not count)",
 ]
-tips = [
-    "Do NOT open drone boxes, you open those in 2 days during the Age of Science (Day 3).",
-    "It is recommended that Hero Exp be used on Train Heroes, (Day 4).",
-    "Send your squads to mine throughout the day and pull back before reset.",
-]
-reminders = [
-    "Base Expansion is tommorrow, so don't pop presents.",
-    "Consider starting a 1 day build",
-    "Hold survivor tickets for tommorrow.",
-    "Hold all hero related upgrades (except for gear) for 3 more days until Day 4, Hero day.",
-    "Consider starting a 2 day research.",
-    "Consider training soliders at least 1 tier below your current max.",
-]
+arms_race = ["Drone Boost: Save drone upgrade and stamina burn for the following day 9:00 AM EST.",
+             "Hero Advancement: Save hero exp for the following day 1:00 PM EST"]
 
 [vs_day_2]
 name = "Base Expansion"
@@ -36,20 +25,7 @@ tasks = [
     "Perform 1 Legendary Secret Task",
     "Recruit Survivor 1 time",
 ]
-tips = [
-    "Up to 30 survivor tickets may be purchased in Alliance store each week.",
-    "General use speed-ups count as long as it is used towards buildings",
-    "Perform secret tasks in your morning and check at least every 2 hours to minimize theft.",
-    "Stagger truck sends, send the trucks in at least 1 minute intervals.",
-
-]
-reminders = [
-    "Save radar tasks again for Age of Science, this is tomorrow.",
-    "Consider starting a 1 day research.",
-    "Keep holding all hero related upgrades (except for gear) for 2 more days until Day 4, Hero day.",
-    "Consider training soliders 1 tier below your current max.",
-
-]
+arms_race = ["City Building at 1:00 AM EST"]
 
 [vs_day_3]
 name = "Age of Science"
@@ -61,22 +37,9 @@ tasks = [
     "Complete 1 Radar task",
     "For each Lv. 1 - 10 Drone Component Chest opened",
 ]
-tips = [
-    "Open those drone boxes but wait for Day 1 again to merge parts.",
-    "Level 1 boxes can be purchased in Alliance Store.",
-    "Level 3 boxes can be purchased in Invading Zombie Event Store, when event is active.",
-    "Level 5 boxes are for the generous ones and can be found in Drone Component under Weekly Deals.",
-    "Research only things that use valor points as those count more.",
-    "General use speed-ups count as long as it is used towards research.",
-]
-reminders = [
-    "Do NOT merge Drone parts until Day 1 of next VS.",
-    "Hold survivor tickets again for the next week.",
-    "Save buildings/present pops for Total Mobilization, in 2 days.",
-    "Keep holding all hero related upgrades (except for gear) for 1 more day until Train Heroes (Day 4).",
-    "Consider training soliders 1 tier below your current max.",
+arms_race = ["Tech Research at 5:00 AM EST",
+             "Drone Boost: burn stamina for radar tasks at 9:00 AM EST"]
 
-]
 
 [vs_day_4]
 name = "Train Heroes"
@@ -88,15 +51,10 @@ tasks = [
     "Use 1 Epic Hero Shard",
     "Use 1 Rare Hero Shard",
     "Use 1 Skill Medal",
+    "Use"
 ]
-tips = ["Do all hero stuff today."]
-reminders = [
-    "Save radar tasks again for Total Mobilization, next VS day.",
-    "Continue holding survivor tickets for next week.",
-    "Consider doing a 1-day research for tomorrow.",
-    "Consider training soliders 1 tier below your current max.",
+arms_race = ["Hero Advancement: Save exp and hero tickets for 9:00 AM EST"]
 
-]
 
 [vs_day_5]
 name = "Total Mobilization"
@@ -111,20 +69,8 @@ tasks = [
     "Train any Lv. 1 to 10 unit",
 
 ]
-tips = [
-    "Research anything, research requiring valor does not give extra bonus.",
-    "General use speed-ups count as long as it is used towards research.",
-    "Train troops one tier below your current thourgh out the week and promote them on this day.",
-]
-reminders = [
-    "Tomorrow is the internal Capitol fight, buffs will not be available, plan accordingly.",
-    "Buy a shield/bubble for the next reset.",
-    "Kill day is tommorrow.",
-    "Continue holding survivor tickets for next week.",
-    "Save all hero related upgrades and tickets except for gear for next week.",
-    "Consider training soliders 1 tier below your current max.",
+arms_race = ["Tech Research at 9:00 PM EST","City Building at 9:00 AM EST","Unit Progression: build troops at 1:00PM EST"]
 
-]
 
 [vs_day_6]
 name = "Enemy Buster"
@@ -138,33 +84,10 @@ tasks = [
     "Every Lv. 1 to 10 Unit Killed",
     "Every Lv. 1 to 10 Unit Lost",
 ]
-tips = [
-    "BUBBLE UP, you may buy buy a sheild from Alliance or VIP store. Do not scout nor attack as you will have to wait 15 minutes before being allowed to sheild.",
-    "Participate in the server capitol event, if available, that happens Saturday at 10 AM EST, 9 AM CST, 8 AM MT, 7AM PST. There are extra rewards for those that fight in the mud then.",
-    "Fight intelligently, always aim for smaller targets as kills are worth more than losses.",
-    "Use the 'quick-heal' method. Only heal a small batch at a time, less than 100, of troops and hope your alliance members are online smashing the help button. This method will reduce the time to heal.",
-    "Use speed-ups of any kind for anything to obtain points.",
-    "Perform secret tasks in your morning and check at least every 2 hours to minimize theft.",
-    "Stagger truck sends, send the trucks in at least 1 minute intervals.",
-]
-reminders = [
-    "There is a free teleport in the fourth tab (Alliance Assaults) of VS. Use it to teleport to the other server and back to align yourself.",
-    "Do NOT put out fires for allied bases that are not bubbled. There is a good chance that they will be set on fire again.",
-]
+arms_race = ["None"]
 
 [vs_day_7]
 name = "Day after tomato"
 day = "Saturday"
 tasks = ["No tasks"]
-tips = ["Get ready to do it all again!"]
-reminders = [
-    "The week starts over ...",
-    "Save some stamina for Day 1.",
-    "Save radar tasks again",
-    "Keep saving all hero related upgrades and tickets except for gear.",
-    "Keep holding survivor tickets",
-    "Do NOT pop presents/buildings.",
-    "Do NOT open Drone Component Chest.",
-    "Do NOT upgrade drone nor drone parts.",
-    "Train troops one tier below your current.",
-]
+arms_race = ["None"]
