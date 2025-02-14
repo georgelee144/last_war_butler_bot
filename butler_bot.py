@@ -119,19 +119,6 @@ async def send_marshal_call(ctx:discord.commands.context.ApplicationContext):
         await ctx.respond("Sorry you do not have the authority (R4/R5 roles are missing) to do that.")
         logging.warning(f"{caller} failed to call send_marshal_call()")
 
-@bot.slash_command(name="traducir", description="Traduce el mensaje más reciente al español.")
-async def traducir(ctx:discord.commands.context.ApplicationContext):
-    caller = ctx.author
-    logging.info(f"{caller} called traducir()")
-
-    last_message = await ctx.channel.history(limit=1).flatten()
-    if last_message:
-        last_message = "Translate into spanish: "+last_message[0].content
-    else:
-        await ctx.respond("Lo siento, pero no parece que haya nada que traducir.")
-    
-    await llm(ctx=ctx,message =last_message,temperature=1)
-
 async def capitol_mud_fight_reminder():
     message = "# Capitol will open be open in about 1 hour.\n"
     message += "## Capitol Buffs will NOT be available for 8 hours from 10am EST, 9am CST, 8am MT, or 7am PST"
