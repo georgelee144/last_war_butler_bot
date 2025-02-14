@@ -54,21 +54,19 @@ async def on_member_join(member):
 
 
 @bot.event
-async def on_message(message):
-    if message.author == bot.user:
+async def on_reaction_add(reaction):
+
+    emoji = reaction.emoji
+
+    if helper.emoji_to_language.get(emoji) is not None:
+        translator = Translator()
+
+        text_to_translate = reaction.message.content
+        translated_text = translator.translate(text_to_translate, dest=helper.emoji_to_language[emoji]).text
+        
+        await reaction.message.channel.send(translated_text)
+    else:
         return
-    
-    translator = Translator()
-
-    # Check for emojis in the message
-    for emoji, lang in helper.emoji_to_language.items():
-        if emoji in message.content:
-            text_to_translate = message.content.replace(emoji, '').strip()
-            if text_to_translate:
-                translated_text = translator.translate(text_to_translate, dest=lang).text
-                await message.channel.send(translated_text)
-
-    await bot.process_commands(message)
 
 
 async def vs_day_reminder():
