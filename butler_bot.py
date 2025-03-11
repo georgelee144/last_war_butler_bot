@@ -56,21 +56,28 @@ async def on_member_join(member):
 
 @bot.event
 async def on_reaction_add(reaction,user):
-    if user == bot.user:
-        return
-    logging.info(f"{reaction.emoji} was added to this message:{reaction.message}")
+    logging.info("Triggered on_reaction_add function")
+    logging.info(f"{reaction.emoji} was added by {user.name} to this message:{reaction.message}")
+    try:
+        if user == bot.user:
+            return
+        emoji = reaction.emoji
 
-    emoji = reaction.emoji
+        if helper.emoji_to_language.get(emoji) is not None:
+            translator = Translator()
 
-    if helper.emoji_to_language.get(emoji) is not None:
-        translator = Translator()
-
-        text_to_translate = reaction.message.content
-        translated_text = translator.translate(text_to_translate, dest=helper.emoji_to_language[emoji]).text
-        logging.info(f"translated {text_to_translate} to {helper.emoji_to_language[emoji]}: {translated_text}")
-        await reaction.message.channel.send(translated_text)
-    else:
-        return
+            text_to_translate = reaction.message.content
+            result = await translator.translate(text_to_translate, dest=helper.emoji_to_language[emoji])
+            translated_text = result.text
+            logging.info(f"translated {text_to_translate} to {helper.emoji_to_language[emoji]}: {translated_text}")
+            await reaction.message.channel.send(translated_text)
+        else:
+            return
+    except Exception as error:
+        logging.error(
+            f"Failed to translate {text_to_translate} to {emoji} becauase: {error}"
+        )
+        pass
 
 
 async def vs_day_reminder():
